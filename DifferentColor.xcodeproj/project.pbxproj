@@ -15,6 +15,7 @@
 		CD1E6D722B47C649004FE9F8 /* DifferentColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E6D712B47C649004FE9F8 /* DifferentColorUITests.swift */; };
 		CD1E6D742B47C649004FE9F8 /* DifferentColorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E6D732B47C649004FE9F8 /* DifferentColorUITestsLaunchTests.swift */; };
 		CD1E6D812B47C6CC004FE9F8 /* mainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E6D802B47C6CC004FE9F8 /* mainGameView.swift */; };
+		CD1E6D832B47C9B9004FE9F8 /* TileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E6D822B47C9B9004FE9F8 /* TileButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		CD1E6D712B47C649004FE9F8 /* DifferentColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentColorUITests.swift; sourceTree = "<group>"; };
 		CD1E6D732B47C649004FE9F8 /* DifferentColorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferentColorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CD1E6D802B47C6CC004FE9F8 /* mainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainGameView.swift; sourceTree = "<group>"; };
+		CD1E6D822B47C9B9004FE9F8 /* TileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				CD1E6D562B47C648004FE9F8 /* DifferentColorApp.swift */,
 				CD1E6D582B47C648004FE9F8 /* ContentView.swift */,
 				CD1E6D802B47C6CC004FE9F8 /* mainGameView.swift */,
+				CD1E6D822B47C9B9004FE9F8 /* TileButton.swift */,
 				CD1E6D5A2B47C649004FE9F8 /* Assets.xcassets */,
 				CD1E6D5C2B47C649004FE9F8 /* Preview Content */,
 			);
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD1E6D592B47C648004FE9F8 /* ContentView.swift in Sources */,
+				CD1E6D832B47C9B9004FE9F8 /* TileButton.swift in Sources */,
 				CD1E6D812B47C6CC004FE9F8 /* mainGameView.swift in Sources */,
 				CD1E6D572B47C648004FE9F8 /* DifferentColorApp.swift in Sources */,
 			);
