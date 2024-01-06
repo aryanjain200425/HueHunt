@@ -76,7 +76,7 @@ struct mainGameView: View {
                             }, label: {
                                 RoundedRectangle(cornerRadius: 10)
                                     .foregroundColor(element.color)
-                                    .frame(width: 39, height: 39)
+                                    .frame(width: squareDim, height: squareDim)
                             })
                         }
                     }}
