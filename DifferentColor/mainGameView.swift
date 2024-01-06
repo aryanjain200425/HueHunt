@@ -15,6 +15,11 @@ struct mainGameView: View {
     
     @State var squareDim:CGFloat = 84-5.59*CGFloat(numSquares)
     
+    @State var timeRemaining = 60
+    
+    var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        
+    @State var isTimerRunning = false
     
     
     
@@ -69,7 +74,8 @@ struct mainGameView: View {
                         ForEach(array, id: \.self){ element in
                             
                             Button(action: {
-                                if (element.chosenOne){
+                                isTimerRunning = true
+                                if (element.chosenOne && timeRemaining > 0){
                                     score += 1
                                     reshuffle()
                                 }
@@ -82,6 +88,19 @@ struct mainGameView: View {
                     }}
                 
             }
+            
+            
+            VStack{
+                Text("Time")
+                HStack{
+                    Text("\(timeRemaining)")
+                        .onReceive(timer) { _ in
+                            if timeRemaining > 0 && isTimerRunning{
+                                timeRemaining -= 1
+                            }
+                        }
+                }
+            }.font(.largeTitle).padding(.top, 50).foregroundColor(Color.black)
         }
     }
     
