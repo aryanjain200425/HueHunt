@@ -102,6 +102,8 @@ struct mainGameView: View {
             
             VStack{
                 Text("Time")
+                    .padding(.trailing, 60)
+                
                 HStack{
                     Text("\(timeRemaining)")
                         .onReceive(timer) { _ in
@@ -112,7 +114,7 @@ struct mainGameView: View {
                     
                     Text(" -5 ").foregroundColor(Color.red).opacity(isHidden ? 0 : 1)
                 }
-            }.font(.largeTitle).padding(.top, 50).foregroundColor(Color.black)
+            }.font(.largeTitle).padding([.top, .leading], 50).foregroundColor(Color.black)
         }
     }
     
