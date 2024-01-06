@@ -57,21 +57,19 @@ struct mainGameView: View {
             
             //MARK: Board
             VStack{
-                HStack{
-                    TileButton(color: Color.green, chosenOne: false)
-                    TileButton(color: Color.green, chosenOne: false)
-                    TileButton(color: Color.green, chosenOne: false)
-                }
-                HStack{
-                    TileButton(color: Color.green, chosenOne: false)
-                    TileButton(color: Color.green, chosenOne: false)
-                    TileButton(color: Color.green, chosenOne: false)
-                }
-                HStack{
-                    TileButton(color: Color.green, chosenOne: false)
-                    TileButton(color: Color.green, chosenOne: false)
-                    TileButton(color: Color.green, chosenOne: false)
-                }
+                ForEach(board, id: \.self){ array in
+                    HStack{
+                        ForEach(array, id: \.self){ element in
+                            
+                            Button(action: {
+                              
+                            }, label: {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(element.color)
+                                    .frame(width: 39, height: 39)
+                            })
+                        }
+                    }}
                 
             }
         }
