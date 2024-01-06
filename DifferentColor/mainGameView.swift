@@ -21,6 +21,9 @@ struct mainGameView: View {
         
     @State var isTimerRunning = false
     
+    //for -5 display
+    @State var isHidden: Bool = true
+    
     
     
     @State var board: [[TileButton]] = {
@@ -78,10 +81,13 @@ struct mainGameView: View {
                                 if (element.chosenOne && timeRemaining > 0){
                                     score += 1
                                     reshuffle()
+                                    isHidden = true
                                 }
                                 
                                 if (!element.chosenOne){
                                     timeRemaining -= 5
+                                    
+                                    isHidden = false
                                 }
                             }, label: {
                                 RoundedRectangle(cornerRadius: 10)
@@ -103,6 +109,8 @@ struct mainGameView: View {
                                 timeRemaining -= 1
                             }
                         }
+                    
+                    Text(" -5 ").foregroundColor(Color.red).opacity(isHidden ? 0 : 1)
                 }
             }.font(.largeTitle).padding(.top, 50).foregroundColor(Color.black)
         }
