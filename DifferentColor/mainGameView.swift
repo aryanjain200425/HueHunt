@@ -79,6 +79,10 @@ struct mainGameView: View {
                                     score += 1
                                     reshuffle()
                                 }
+                                
+                                if (!element.chosenOne){
+                                    timeRemaining -= 5
+                                }
                             }, label: {
                                 RoundedRectangle(cornerRadius: 10)
                                     .foregroundColor(element.color)
