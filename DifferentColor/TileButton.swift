@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TileButton: View {
     
+    var id = UUID()
+    
     let color: Color
     let chosenOne: Bool
     
@@ -18,6 +20,19 @@ struct TileButton: View {
                 .foregroundColor(color)
                 .frame(width: 66, height: 66)
         })
+    }
+}
+
+
+extension TileButton: Hashable{
+    var identifer: String{
+        return UUID().uuidString
+    }
+    
+    func hash(into hasher: inout Hasher) {}
+    
+    static func == (lhs: TileButton, rhs: TileButton) -> Bool{
+        return lhs.id == rhs.id
     }
 }
 
