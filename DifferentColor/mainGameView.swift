@@ -7,23 +7,28 @@
 
 import SwiftUI
 
+var numSquares = 5
+
 struct mainGameView: View {
+    
     @State var score: Int = 0
+    
+    
     
     
     @State var board: [[TileButton]] = {
         var counter = 0
         
-        var rand = Int.random(in: 0...8)
+        var rand = Int.random(in: 0...numSquares*numSquares-1)
         
-        var views = [[TileButton]](repeating: [TileButton](repeating: TileButton(color: Color.green, chosenOne: false), count: 3), count: 3)
+        var views = [[TileButton]](repeating: [TileButton](repeating: TileButton(color: Color.green, chosenOne: false), count: numSquares), count: numSquares)
         
         var newColor = Color.red
         
         var maybeChosen = false
         
-        for i in 0..<3 {
-            for j in 0..<3 {
+        for i in 0 ..< numSquares {
+            for j in 0 ..< numSquares {
                 if (counter == rand){
                     maybeChosen = true
                     newColor = Color.blue
