@@ -97,6 +97,15 @@ struct mainGameView: View {
                         }
                     }}
                 
+                if (timeRemaining <= 0){
+                    let board = [[]]
+                    
+                    Button("Restart"){
+                        restart()
+                    }
+                    
+                }
+                
             }
             
             
@@ -116,6 +125,16 @@ struct mainGameView: View {
                 }
             }.font(.largeTitle).padding([.top, .leading], 50).foregroundColor(Color.black)
         }
+    }
+    
+    
+    
+    func restart(){
+        timeRemaining = 60
+        isHidden = true
+        score = 0
+        reshuffle()
+        isTimerRunning = false
     }
     
     
