@@ -62,7 +62,9 @@ struct mainGameView: View {
                         ForEach(array, id: \.self){ element in
                             
                             Button(action: {
-                              
+                                if (element.chosenOne){
+                                    score += 1
+                                }
                             }, label: {
                                 RoundedRectangle(cornerRadius: 10)
                                     .foregroundColor(element.color)
