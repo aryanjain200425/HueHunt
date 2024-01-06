@@ -13,6 +13,8 @@ struct mainGameView: View {
     
     @State var score: Int = 0
     
+    @State var squareDim:CGFloat = 84-5.59*CGFloat(numSquares)
+    
     
     
     
@@ -69,6 +71,7 @@ struct mainGameView: View {
                             Button(action: {
                                 if (element.chosenOne){
                                     score += 1
+                                    reshuffle()
                                 }
                             }, label: {
                                 RoundedRectangle(cornerRadius: 10)
@@ -81,7 +84,63 @@ struct mainGameView: View {
             }
         }
     }
+    
+    
+    
+    func reshuffle(){
+        
+        numSquares = Int.random(in: 4...10)
+        
+        squareDim = 84-5.59*CGFloat(numSquares)
+        
+        let data2: [[TileButton]] = {
+            
+            var counter = 0
+            
+            let rand = Int.random(in: 0...numSquares*numSquares-1)
+            
+            var views = [[TileButton]](repeating: [TileButton](repeating: TileButton(color: Color.red, chosenOne: false), count: numSquares), count: numSquares)
+            
+            var maybeChosen = false
+            
+            let r:Double = Double(Int.random(in: 25...204))/255
+            let b:Double = Double(Int.random(in: 25...204))/255
+            let g:Double = Double(Int.random(in: 25...204))/255
+            
+            var newColor = Color(red: r, green: g, blue: b)
+            
+            for i in 0..<numSquares{
+                for j in 0..<numSquares{
+                    if(counter == rand){
+                        maybeChosen = true
+                        newColor = Color(red: r+0.2, green: g+0.2, blue: b+0.2)
+                        
+                    }
+                    else{
+                        maybeChosen = false
+                        newColor = Color(red: r, green: g, blue: b)
+                        
+                    }
+                    
+                    views[i][j] = TileButton(color: newColor, chosenOne: maybeChosen)
+                                       
+                    counter = counter + 1
+                }
+            }
+            
+            return views
+            
+        }()
+        
+        
+        board = data2
+
+        
+    }
 }
+
+
+
 
 #Preview {
     mainGameView()
